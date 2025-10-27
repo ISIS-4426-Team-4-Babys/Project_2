@@ -1,0 +1,63 @@
+services:
+
+  # Preprocess async woker
+  preprocess:
+    container_name: preprocess
+    build:
+      context: .
+      dockerfile: workers/preprocess/Dockerfile
+    env_file:
+      - ./rabbitmq/.env
+    volumes:
+      - /nfs/data:/app/backend/data
+    restart: unless-stopped
+
+  # Format async worker
+  format:
+    container_name: format
+    build:
+      context: .
+      dockerfile: workers/format/Dockerfile
+    env_file:
+      - ./workers/format/.env
+      - ./rabbitmq/.env
+    volumes:
+      - /nfs/data:/app/backend/data
+    restart: unless-stopped
+
+  # Prompt async worker
+  prompt:
+    container_name: prompt
+    build:
+      context: .
+      dockerfile: workers/prompt/Dockerfile
+    env_file:
+      - ./workers/format/.env
+      - ./rabbitmq/.env
+    volumes:
+      - /nfs/prompts:/app/backend/prompts
+    restart: unless-stopped
+
+  # Vectorize async worker
+  vectorize:
+    container_name: vectorize
+    build:
+      context: .
+      dockerfile: workers/vectorize/Dockerfile
+    env_file:
+      - ./workers/vectorize/.env
+      - ./rabbitmq/.env
+    volumes:
+      - /nfs/data:/app/backend/data
+      - /nfs/databases:/app/databases
+    restart: unless-stopped
+
+  # Barrier Notifier
+  barriers:
+    container_name: barriers
+    build:
+      context: .
+      dockerfile: workers/barrier/Dockerfile
+    env_file:
+      - ./rabbitmq/.env
+    restart: unless-stopped

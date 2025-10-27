@@ -1,3 +1,7 @@
 bastion/*.pem
 
 deploy/workers/vectorize/.env
+
+workers/workers/format/.env
+
+workers/workers/vectorize/.env
