@@ -1,0 +1,49 @@
+services:
+
+  # Database 
+  database:
+    container_name: database
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    env_file:
+      - ./database/.env
+    volumes:
+      - database:/data/db
+    restart: unless-stopped
+
+  # Adminer UI
+  adminer:
+    container_name: adminer
+    image: adminer
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "/var/www/html"]
+    ports:
+      - "0.0.0.0:8081:8080"
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+
+  # Backend FastAPI
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - ./backend/.env
+      - ./rabbitmq/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      database:
+        condition: service_healthy
+    volumes:
+      - /nfs/data:/app/backend/data
+      - /nfs/prompts:/app/backend/prompts
+    restart: unless-stopped
+
+# Volumes
+volumes:
+  database:
+    driver: local

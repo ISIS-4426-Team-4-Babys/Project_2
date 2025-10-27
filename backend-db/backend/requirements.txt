@@ -1,0 +1,12 @@
+sqlalchemy
+fastapi
+uvicorn[standard]
+psycopg2-binary
+passlib[bcrypt]
+bcrypt==4.3.0
+python-jose[cryptography]
+python-multipart
+pika
+httpx
+pytest
+aio-pika
