@@ -1,0 +1,35 @@
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx/timeout.conf:/etc/nginx/conf.d/timeout.conf:ro
+    restart: unless-stopped
+  
+  # Deploy async worker
+  deploy:
+    container_name: deploy
+    build:
+      context: .
+      dockerfile: workers/deploy/Dockerfile
+    env_file:
+      - ./rabbitmq/.env
+      - ./workers/vectorize/.env
+      - ./workers/deploy/.env
+    volumes:
+      - /nfs/databases:/app/databases
+      - /nfs/prompts:/app/prompts
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+  # Agent base 
+  agent-base:
+    build:
+      context: . 
+      dockerfile: workers/deploy/templates/Dockerfile
+    env_file:
+      - ./workers/vectorize/.env
+    image: agent-base
