@@ -1,8 +1,9 @@
-from locust import HttpUser, task, between
+from locust import HttpUser, task, constant
 from rabbitmq import RabbitMQ
 import threading
 import logging
 import asyncio
+import random
 import time
 import json
 
@@ -18,21 +19,12 @@ async def on_deploy_message(message):
         body = message.body.decode().strip()
         data = json.loads(body)
         agent_id = data.get("agent_id")
+        logging.info(f"Received message = {agent_id}")
 
         if  agent_id in agent_start_times:
             start_time = agent_start_times.pop(agent_id)
             total_time = (time.time() - start_time) * 1000  
-            logging.info(f"✅ Agent {agent_id} deployed in {total_time:.2f} ms")
-
-            global locust_env
-            if locust_env:
-                locust_env.events.request.fire(
-                    request_type = "EVENT",
-                    name = "agent.deploy.completed",
-                    response_time = total_time,
-                    response_length = 0,
-                    exception = None,
-                )
+            logging.info(f"Agent {agent_id} deployed in {total_time:.2f} ms")
 
     except Exception as e:
         logging.error(f"Error processing message: {e}")
@@ -49,11 +41,9 @@ def start_rabbitmq_listener(env):
     return thread
 
 
-locust_env = None
-
-
 class FullLoadUser(HttpUser):
-    wait_time = between(1, 3)
+
+    wait_time = constant(120)
 
     admin_name = "Nicolas Rozo Fajardo"
     admin_email = "n.rozo@uniandes.edu.co"
@@ -67,11 +57,10 @@ class FullLoadUser(HttpUser):
     course_id = None
 
     def on_start(self):
-        global locust_env
-        locust_env = self.environment  
 
         if not hasattr(self.environment, "rabbit_thread"):
             self.environment.rabbit_thread = start_rabbitmq_listener(self.environment)
+            logging.info("Rabbit MQ Listener Started")
 
         payload = {
             "name": self.admin_name,
@@ -84,7 +73,7 @@ class FullLoadUser(HttpUser):
         with self.client.post("/auth/register", json = payload, catch_response = True) as resp:
             if resp.status_code not in (200, 201, 400):
                 resp.failure(f"Error registering admin: {resp.status_code}")
-        
+            logging.info("Admin created successfully")
         
         payload = {
             "email": self.admin_email, 
@@ -95,6 +84,7 @@ class FullLoadUser(HttpUser):
             if resp.status_code not in (200, 201):
                 resp.failure(f"Error login admin: {resp.status_code}")
             self.admin_token = resp.json().get("access_token")
+            logging.info(f"Admin logged successfully with token {self.admin_token}")
 
         
         payload = {
@@ -107,9 +97,10 @@ class FullLoadUser(HttpUser):
 
         headers = {"Authorization": f"Bearer {self.admin_token}"}
         with self.client.post("/users", json = payload, headers = headers, catch_response = True) as resp:
-            if resp.status_code != (200, 201, 400):
+            if resp.status_code not in (200, 201, 400):
                 resp.failure(f"Error registering professor: {resp.status_code}")
             self.professor_id = resp.json().get("id") if resp.status_code != 400 else None
+            logging.info(f"Professor created successfully with id {self.professor_id}")
 
 
         payload = {
@@ -125,6 +116,8 @@ class FullLoadUser(HttpUser):
             if resp.status_code not in (200, 201, 400):
                 resp.failure(f"Error creating course: {resp.status_code}")
             self.course_id = resp.json().get("id") if resp.status_code != 400 else None
+            logging.info(f"Course created successfully with id {self.course_id}")
+
 
     @task
     def create_agent_with_resources(self):
@@ -145,13 +138,16 @@ class FullLoadUser(HttpUser):
         with self.client.post("/agents", json = agent_payload, headers = headers, catch_response = True) as resp:
             if resp.status_code in (200, 201):
                 agent_id = resp.json().get("id")
+                logging.info(f"Agent created successfully with id {agent_id}")
                 if agent_id:
                     agent_start_times[agent_id] = time.time()
                     resp.success()
                 else:
+                    logging.info("Error creating agent")
                     resp.failure("Cant access to agent_id")
                     return
             else:
+                logging.info("Error creating agent")
                 resp.failure(f"Error creating agent: {resp.status_code}")
                 return
 
@@ -159,3 +155,4 @@ class FullLoadUser(HttpUser):
             files = {"file": ("dummy_document.pdf", f, "application/pdf")}
             data = {"name": "Dummy Resource", "consumed_by": f"{agent_id}", "total_docs": "1"}
             self.client.post("/resources", data = data, files = files, headers = headers)
+
