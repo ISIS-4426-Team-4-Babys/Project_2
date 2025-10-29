@@ -25,7 +25,7 @@ if not os.path.exists(RESULTS_FILE):
 
 class FullLoadUser(HttpUser):
 
-    wait_time = constant(30)
+    wait_time = constant(10)
 
     admin_name = "Nicolas Rozo Fajardo"
     admin_email = "n.rozo@uniandes.edu.co"
@@ -38,7 +38,7 @@ class FullLoadUser(HttpUser):
     professor_id = None
     course_id = None
 
-    max_requests = 3
+    max_requests = 20
     current_requests = 0
 
     def on_start(self):
@@ -81,7 +81,7 @@ class FullLoadUser(HttpUser):
             if resp.status_code not in (200, 201, 400):
                 resp.failure(f"Error registering professor: {resp.status_code}")
             self.professor_id = resp.json().get("id") if resp.status_code != 400 else None
-            logging.info(f"Professor created successfully")
+            logging.info(f"Professor created successfully with id {self.professor_id}")
 
 
         payload = {
@@ -97,7 +97,7 @@ class FullLoadUser(HttpUser):
             if resp.status_code not in (200, 201, 400):
                 resp.failure(f"Error creating course: {resp.status_code}")
             self.course_id = resp.json().get("id") if resp.status_code != 400 else None
-            logging.info(f"Course created successfully")
+            logging.info(f"Course created successfully with id {self.course_id}")
 
 
     @task
