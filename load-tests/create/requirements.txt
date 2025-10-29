@@ -1,3 +1,4 @@
 locust
 pika
 aio-pika
+anyio
