@@ -1,10 +1,13 @@
 from rabbitmq import RabbitMQ
+from dotenv import load_dotenv
 import logging
 import asyncio
 import anyio
 import json
 import csv
 import os
+
+load_dotenv()
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
