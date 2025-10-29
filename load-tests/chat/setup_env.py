@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 
-BASE_URL =os.getenv("API_URL")
+BASE_URL =os.getenv("BASE_URL")
 
 ADMIN_NAME = "Manuel Felipe Porras"
 ADMIN_EMAIL = "mf.porras@uniandes.edu.co"
