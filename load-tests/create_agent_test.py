@@ -6,12 +6,21 @@ import asyncio
 import random
 import time
 import json
+import csv
+import os
 
 
 logging.basicConfig(level = logging.INFO, format = "%(asctime)s [%(levelname)s] %(message)s")
 
 
 agent_start_times = {}
+
+RESULTS_FILE = "deploy_times.csv"
+
+if not os.path.exists(RESULTS_FILE):
+    with open(RESULTS_FILE, mode="w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["agent_id", "deploy_time_ms"])
 
 
 async def on_deploy_message(message):
@@ -141,6 +150,12 @@ class FullLoadUser(HttpUser):
                 logging.info(f"Agent created successfully with id {agent_id}")
                 if agent_id:
                     agent_start_times[agent_id] = time.time()
+                    logging.info(f"Agent {agent_id} with time {agent_start_times[agent_id]}")
+
+                    with open(RESULTS_FILE, mode="a", newline="") as f:
+                        writer = csv.writer(f)
+                        writer.writerow([agent_id, f"{agent_start_times[agent_id]:.2f}"])
+                        
                     resp.success()
                 else:
                     logging.info("Error creating agent")
