@@ -40,22 +40,22 @@ async def callback(message):
         async with await anyio.open_file(prompt_path, "r") as f:
             PROMPT += await f.read()
 
-        await asyncio.create_subprocess_exec(
-            "docker", 
-            "run", 
-            "-d", 
-            "--name", container_name, 
-            "--network", "deplo_default",
-            "-e", f"AGENT_ID={agent_id}", 
-            "-e", f"GOOGLE_API_KEY={GOOGLE_API_KEY}", 
-            "-e", f"PROMPT={PROMPT}",
-            "-e", f"VIRTUAL_HOST={container_name}",
-            "-e", f"VIRTUAL_PORT={container_port}",
-            "-p", f"{host_port}:{container_port}", 
-            "-v", f"{host_path}:{container_path}", 
-            image_name,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE,)
+        #await asyncio.create_subprocess_exec(
+        #    "docker", 
+        #    "run", 
+        #    "-d", 
+        #    "--name", container_name, 
+        #    "--network", "deplo_default",
+        #    "-e", f"AGENT_ID={agent_id}", 
+        #    "-e", f"GOOGLE_API_KEY={GOOGLE_API_KEY}", 
+        #    "-e", f"PROMPT={PROMPT}",
+        #    "-e", f"VIRTUAL_HOST={container_name}",
+        #    "-e", f"VIRTUAL_PORT={container_port}",
+        #    "-p", f"{host_port}:{container_port}", 
+        #    "-v", f"{host_path}:{container_path}", 
+        #    image_name,
+        #    stdout=asyncio.subprocess.PIPE,
+        #    stderr=asyncio.subprocess.PIPE,)
         
         message = {
             "agent_id": agent_id,
