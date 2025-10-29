@@ -3,3 +3,4 @@ pika
 aio-pika
 anyio
 python-dotenv
+requests

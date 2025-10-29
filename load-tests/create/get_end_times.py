@@ -2,10 +2,10 @@ from rabbitmq import RabbitMQ
 from dotenv import load_dotenv
 import logging
 import asyncio
-import anyio
 import json
 import csv
 import os
+
 
 load_dotenv()
 

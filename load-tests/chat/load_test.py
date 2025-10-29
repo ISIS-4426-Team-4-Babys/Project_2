@@ -26,7 +26,6 @@ class ChatUser(HttpUser):
             "question": "Considerando la complejidad de la nómina de Kluuvin Apteekki y la preocupación de Pia por perder el control y la seguridad de sus datos, ¿de qué manera un sistema de contabilidad en la nube (AIS) de tipo SaaS público podría simultáneamente solucionar su problema de carga administrativa y agravar sus mayores temores sobre la externalización y la tecnología?"
         }
 
-        logging.info(f"Starting interaction with chat")
         with self.client.post(f"/ask", json = chat_payload, headers=headers, catch_response = True) as resp:
 
             if resp.status_code in (200, 201):
