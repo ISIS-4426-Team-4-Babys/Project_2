@@ -1,16 +1,19 @@
-from rabbitmq import RabbitMQ   
-import logging
+from rabbitmq import RabbitMQ  
 import subprocess
-import json
-import os
+import logging
 import asyncio
 import anyio
+import json
 import time
+import os
+
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
+
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 BASE_PATH = os.getenv("BASE_PATH")
+
 
 rabbitmq = RabbitMQ()
 
@@ -54,9 +57,13 @@ async def callback(message):
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,)
         
-        await rabbitmq.publish("create_test", json.dumps({"agent_id": agent_id, "end_time": time.time()}))
-        
+        message = {
+            "agent_id": agent_id,
+            "end_time": time.time()
+        }
 
+        await rabbitmq.publish("create_agent_test", json.dumps(message))
+        
         logging.info(f"Agent deployed in http://localhost:{host_port} with ID {agent_id}")
 
     except Exception as e:

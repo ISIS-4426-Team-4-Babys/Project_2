@@ -25,7 +25,7 @@ if not os.path.exists(RESULTS_FILE):
 
 class FullLoadUser(HttpUser):
 
-    wait_time = constant(120)
+    wait_time = constant(30)
 
     admin_name = "Nicolas Rozo Fajardo"
     admin_email = "n.rozo@uniandes.edu.co"
@@ -37,6 +37,9 @@ class FullLoadUser(HttpUser):
     professor_password = "Juan123"
     professor_id = None
     course_id = None
+
+    max_requests = 3
+    current_requests = 0
 
     def on_start(self):
 
@@ -100,6 +103,11 @@ class FullLoadUser(HttpUser):
     @task
     def create_agent_with_resources(self):
 
+        if self.current_requests >= self.max_requests:
+            logging.info("Test ran 20 times. Stopping")
+            self.environment.runner.quit()  
+            return
+        
         headers = {"Authorization": f"Bearer {self.admin_token}"}
 
         agent_payload = {
@@ -137,3 +145,5 @@ class FullLoadUser(HttpUser):
             data = {"name": "Dummy Resource", "consumed_by": f"{agent_id}", "total_docs": "1"}
             self.client.post("/resources", data = data, files = files, headers = headers)
             logging.info(f"Resource created successfully")
+        
+        self.current_requests += 1
