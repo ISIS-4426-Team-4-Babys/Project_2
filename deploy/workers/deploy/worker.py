@@ -5,6 +5,7 @@ import json
 import os
 import asyncio
 import anyio
+import time
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
@@ -53,6 +54,7 @@ async def callback(message):
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,)
         
+        await rabbitmq.publish("create_test", json.dumps({"agent_id": agent_id, "end_time": time.time()}))
         
 
         logging.info(f"Agent deployed in http://localhost:{host_port} with ID {agent_id}")
