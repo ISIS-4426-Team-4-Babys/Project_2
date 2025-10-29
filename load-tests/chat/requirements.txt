@@ -1,0 +1,5 @@
+locust
+pika
+aio-pika
+anyio
+python-dotenv
