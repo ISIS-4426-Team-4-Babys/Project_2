@@ -14,13 +14,13 @@ logging.basicConfig(level = logging.INFO, format = "%(asctime)s [%(levelname)s] 
 agent_start_times = {}
 
 
-RESULTS_FILE = "deploy_times.csv"
+RESULTS_FILE = "deploy_start_times.csv"
 
 
 if not os.path.exists(RESULTS_FILE):
     with open(RESULTS_FILE, mode = "w", newline = "") as f:
         writer = csv.writer(f)
-        writer.writerow(["agent_id", "deploy_time_ms"])
+        writer.writerow(["agent_id", "start_time"])
 
 
 class FullLoadUser(HttpUser):
