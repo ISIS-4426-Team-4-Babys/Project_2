@@ -45,7 +45,7 @@ async def callback(message):
             "run", 
             "-d", 
             "--name", container_name, 
-            "--network", "deplo_default",
+            "--network", "deploy_default",
             "-e", f"AGENT_ID={agent_id}", 
             "-e", f"GOOGLE_API_KEY={GOOGLE_API_KEY}", 
             "-e", f"PROMPT={PROMPT}",
