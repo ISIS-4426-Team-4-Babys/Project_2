@@ -100,7 +100,7 @@ def load_resource(token, agent_id):
     with open("data/dummy_document.pdf", "rb") as f:
         files = {"file": ("dummy_document.pdf", f, "application/pdf")}
         data = {"name": "Dummy Resource", "consumed_by": f"{agent_id}", "total_docs": "1"}
-        requests.post("/resources", data = data, files = files, headers = headers)  
+        requests.post(f"{BASE_URL}/resources", data = data, files = files, headers = headers)  
     print(f"[✓] Resource created and loaded to: {agent_id}")
 
 if __name__ == "__main__":
