@@ -1,0 +1,134 @@
+{
+    "RouteTables": [
+        {
+            "Associations": [
+                {
+                    "Main": true,
+                    "RouteTableAssociationId": "rtbassoc-075ad3c8e906c01c0",
+                    "RouteTableId": "rtb-09831bbaf606113e9",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-09831bbaf606113e9",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                }
+            ],
+            "Tags": [],
+            "VpcId": "vpc-01b07d85528c04259",
+            "OwnerId": "159478904064"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": true,
+                    "RouteTableAssociationId": "rtbassoc-0fa47579a235b4699",
+                    "RouteTableId": "rtb-0441f2f858ffae83b",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-0441f2f858ffae83b",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "172.31.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "GatewayId": "igw-0a57e821204bb2173",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [],
+            "VpcId": "vpc-0d8b1a16a82bca4a6",
+            "OwnerId": "159478904064"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0fda24feab5de84d0",
+                    "RouteTableId": "rtb-0c5bae6c561781584",
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-0c5bae6c561781584",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "NatGatewayId": "nat-07a19293222fbced4",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "deplo-vpc-rtb-private1-us-east-1a"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "OwnerId": "159478904064"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-00a961cc1bdf5c127",
+                    "RouteTableId": "rtb-0627e8ef3f17bc4f7",
+                    "SubnetId": "subnet-02e1673e93016bd1b",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-0627e8ef3f17bc4f7",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "GatewayId": "igw-03d1e5241bb2f6ff3",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "deplo-vpc-rtb-public"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "OwnerId": "159478904064"
+        }
+    ]
+}

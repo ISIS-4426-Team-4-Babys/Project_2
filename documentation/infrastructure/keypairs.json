@@ -1,0 +1,20 @@
+{
+    "KeyPairs": [
+        {
+            "KeyPairId": "key-08e1988e00110cc83",
+            "KeyType": "rsa",
+            "Tags": [],
+            "CreateTime": "2025-10-22T16:39:20.467000+00:00",
+            "KeyName": "private-keys",
+            "KeyFingerprint": "8d:80:7f:79:bc:68:79:4b:16:ef:31:37:4e:65:84:36:fc:22:fe:6b"
+        },
+        {
+            "KeyPairId": "key-07d3b3564c8ebffcc",
+            "KeyType": "rsa",
+            "Tags": [],
+            "CreateTime": "2025-10-15T00:42:47.467000+00:00",
+            "KeyName": "vockey",
+            "KeyFingerprint": "3f:85:10:70:2b:5f:8c:5c:7e:0b:05:d3:fc:cc:05:c5:da:da:cd:e9"
+        }
+    ]
+}

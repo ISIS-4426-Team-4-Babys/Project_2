@@ -1,0 +1,1266 @@
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-0c28f443345dc7ce9",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T19:57:06+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0d4c9602763f80ade"
+                            }
+                        }
+                    ],
+                    "ClientToken": "525a2599-ca40-4cec-adad-3b19a550a662",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T19:57:05+00:00",
+                                "AttachmentId": "eni-attach-0d2c623205b54608e",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-042caf03db2dbf722",
+                                    "GroupName": "backend-db-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0ef5ce3b1c5727990",
+                                    "GroupName": "private-ssh-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:c5:30:97:df",
+                            "NetworkInterfaceId": "eni-019479e2aec9fb19f",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-1-88.ec2.internal",
+                            "PrivateIpAddress": "10.0.1.88",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-1-88.ec2.internal",
+                                    "PrivateIpAddress": "10.0.1.88"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-09ca94883397f826a",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-042caf03db2dbf722",
+                            "GroupName": "backend-db-sg"
+                        },
+                        {
+                            "GroupId": "sg-0ef5ce3b1c5727990",
+                            "GroupName": "private-ssh-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "backend-db"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T19:57:05+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-0ed0835e235ea6272",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-88.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "private-keys",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.medium",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.1.88"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-0528ec7e30943b795",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T19:53:28+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-08c43aa1f23420bc1"
+                            }
+                        }
+                    ],
+                    "ClientToken": "ffa851bf-acc7-4920-a87c-a800ca4cb691",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T19:53:27+00:00",
+                                "AttachmentId": "eni-attach-088889848a051132c",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-0f4e493a65b115109",
+                                    "GroupName": "broker-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0ef5ce3b1c5727990",
+                                    "GroupName": "private-ssh-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:ea:3c:0f:4f",
+                            "NetworkInterfaceId": "eni-0ac9a1887b0b44ed0",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-1-65.ec2.internal",
+                            "PrivateIpAddress": "10.0.1.65",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-1-65.ec2.internal",
+                                    "PrivateIpAddress": "10.0.1.65"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-09ca94883397f826a",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-0f4e493a65b115109",
+                            "GroupName": "broker-sg"
+                        },
+                        {
+                            "GroupId": "sg-0ef5ce3b1c5727990",
+                            "GroupName": "private-ssh-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "broker"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T19:53:27+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-01cb73c27b4277044",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-65.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "private-keys",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.medium",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.1.65"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-08be0af5b900f2af7",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T19:55:34+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-050dcbc7c6c409047"
+                            }
+                        }
+                    ],
+                    "ClientToken": "068b5e60-a786-4d49-abee-1cd09b425a03",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T19:55:34+00:00",
+                                "AttachmentId": "eni-attach-07fc05040d1a378be",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-0e3992b3d42b01c42",
+                                    "GroupName": "deploy-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0ef5ce3b1c5727990",
+                                    "GroupName": "private-ssh-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:ec:73:d3:e9",
+                            "NetworkInterfaceId": "eni-00e2d7e1af659152b",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-1-69.ec2.internal",
+                            "PrivateIpAddress": "10.0.1.69",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-1-69.ec2.internal",
+                                    "PrivateIpAddress": "10.0.1.69"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-09ca94883397f826a",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-0e3992b3d42b01c42",
+                            "GroupName": "deploy-sg"
+                        },
+                        {
+                            "GroupId": "sg-0ef5ce3b1c5727990",
+                            "GroupName": "private-ssh-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "deploy"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T19:55:34+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-00795870c359f234c",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-69.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "private-keys",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.large",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.1.69"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-01ba89d7ca72cbb5f",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T17:54:42+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0149bc954f33a7518"
+                            }
+                        }
+                    ],
+                    "ClientToken": "09359b2a-a288-45c9-8671-0dde6ea99d7c",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T17:54:41+00:00",
+                                "AttachmentId": "eni-attach-05ea198c17266b971",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-0cd7cd9124a5f7dfe",
+                                    "GroupName": "nfs-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0ef5ce3b1c5727990",
+                                    "GroupName": "private-ssh-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:dc:43:0c:2f",
+                            "NetworkInterfaceId": "eni-0bbe806fb9bc86b11",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-1-46.ec2.internal",
+                            "PrivateIpAddress": "10.0.1.46",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-1-46.ec2.internal",
+                                    "PrivateIpAddress": "10.0.1.46"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-09ca94883397f826a",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-0cd7cd9124a5f7dfe",
+                            "GroupName": "nfs-sg"
+                        },
+                        {
+                            "GroupId": "sg-0ef5ce3b1c5727990",
+                            "GroupName": "private-ssh-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "nfs-server"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T17:54:41+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-0b24263c54a4630e0",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-46.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "private-keys",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.medium",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.1.46"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-0b84f62820ffcd429",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T19:58:56+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0c04e455d526712c0"
+                            }
+                        }
+                    ],
+                    "ClientToken": "9a0c002d-8e87-4cca-aa24-b5abe8b91ed0",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-107-22-97-51.compute-1.amazonaws.com",
+                                "PublicIp": "107.22.97.51"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T19:58:56+00:00",
+                                "AttachmentId": "eni-attach-0cabb83082a8f0922",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-0258d7169e09f64ab",
+                                    "GroupName": "frontend-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0980f9106e7ecd988",
+                                    "GroupName": "bastion-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:f3:ed:36:39",
+                            "NetworkInterfaceId": "eni-0893842ffac6530a3",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-0-249.ec2.internal",
+                            "PrivateIpAddress": "10.0.0.249",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-107-22-97-51.compute-1.amazonaws.com",
+                                        "PublicIp": "107.22.97.51"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-0-249.ec2.internal",
+                                    "PrivateIpAddress": "10.0.0.249"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-02e1673e93016bd1b",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-0258d7169e09f64ab",
+                            "GroupName": "frontend-sg"
+                        },
+                        {
+                            "GroupId": "sg-0980f9106e7ecd988",
+                            "GroupName": "bastion-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "frontend"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T19:58:56+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-067b2c268239e9729",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-0-249.ec2.internal",
+                    "PublicDnsName": "ec2-107-22-97-51.compute-1.amazonaws.com",
+                    "StateTransitionReason": "",
+                    "KeyName": "vockey",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.medium",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-02e1673e93016bd1b",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.0.249",
+                    "PublicIpAddress": "107.22.97.51"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-0921779ba35ba1a3e",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T18:41:30+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0fa6f31b58af396af"
+                            }
+                        }
+                    ],
+                    "ClientToken": "ea29efb1-8357-49e7-9922-3caec8cf793d",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T18:41:29+00:00",
+                                "AttachmentId": "eni-attach-0c8c39fb2bd88c2f8",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-0ef5ce3b1c5727990",
+                                    "GroupName": "private-ssh-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0fac6a7b139999ad9",
+                                    "GroupName": "workers-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:e5:e3:41:8f",
+                            "NetworkInterfaceId": "eni-0751a9fb87e36d3d2",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-1-156.ec2.internal",
+                            "PrivateIpAddress": "10.0.1.156",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-1-156.ec2.internal",
+                                    "PrivateIpAddress": "10.0.1.156"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-09ca94883397f826a",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-0ef5ce3b1c5727990",
+                            "GroupName": "private-ssh-sg"
+                        },
+                        {
+                            "GroupId": "sg-0fac6a7b139999ad9",
+                            "GroupName": "workers-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "workers"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 2,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T18:41:29+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "legacy-bios",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-0f2830f9574e4a685",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-156.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "private-keys",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t2.large",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.1.156"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-0b355c68dea4cf3cc",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-28T20:00:18+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0fc1e117445ac18cc"
+                            }
+                        }
+                    ],
+                    "ClientToken": "f07a3afe-46ff-4fd8-a740-6e850e562673",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2025-10-28T20:00:17+00:00",
+                                "AttachmentId": "eni-attach-0bafb28a424689e66",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-01b115782e9606e26",
+                                    "GroupName": "load-sg"
+                                },
+                                {
+                                    "GroupId": "sg-0ef5ce3b1c5727990",
+                                    "GroupName": "private-ssh-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:da:b4:ea:af",
+                            "NetworkInterfaceId": "eni-0df1bdfb53f7800ee",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-1-141.ec2.internal",
+                            "PrivateIpAddress": "10.0.1.141",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-1-141.ec2.internal",
+                                    "PrivateIpAddress": "10.0.1.141"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-09ca94883397f826a",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-01b115782e9606e26",
+                            "GroupName": "load-sg"
+                        },
+                        {
+                            "GroupId": "sg-0ef5ce3b1c5727990",
+                            "GroupName": "private-ssh-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "load-tests"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-28T20:00:17+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-09d55b5ca66c5b6de",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-141.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "private-keys",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.medium",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-09ca94883397f826a",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.1.141"
+                }
+            ]
+        },
+        {
+            "ReservationId": "r-0d1434d2a37b4a88a",
+            "OwnerId": "159478904064",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2025-10-22T17:53:02+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-04bf3f46f523290f1"
+                            }
+                        }
+                    ],
+                    "ClientToken": "ffcfa4b5-0320-4eb6-abce-f1d4fb153866",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-98-89-36-6.compute-1.amazonaws.com",
+                                "PublicIp": "98.89.36.6"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2025-10-22T17:53:01+00:00",
+                                "AttachmentId": "eni-attach-0bac1268498c9dd83",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-0980f9106e7ecd988",
+                                    "GroupName": "bastion-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:ca:ca:b6:73",
+                            "NetworkInterfaceId": "eni-01da8e615d4a55bca",
+                            "OwnerId": "159478904064",
+                            "PrivateDnsName": "ip-10-0-0-186.ec2.internal",
+                            "PrivateIpAddress": "10.0.0.186",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-98-89-36-6.compute-1.amazonaws.com",
+                                        "PublicIp": "98.89.36.6"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-10-0-0-186.ec2.internal",
+                                    "PrivateIpAddress": "10.0.0.186"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-02e1673e93016bd1b",
+                            "VpcId": "vpc-01b07d85528c04259",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-0980f9106e7ecd988",
+                            "GroupName": "bastion-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "bastion"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-10-22T17:53:01+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-00914e1b03f76869f",
+                    "ImageId": "ami-0360c520857e3138f",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-0-186.ec2.internal",
+                    "PublicDnsName": "ec2-98-89-36-6.compute-1.amazonaws.com",
+                    "StateTransitionReason": "",
+                    "KeyName": "vockey",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t3.small",
+                    "LaunchTime": "2025-10-30T15:28:02+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-az4",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-02e1673e93016bd1b",
+                    "VpcId": "vpc-01b07d85528c04259",
+                    "PrivateIpAddress": "10.0.0.186",
+                    "PublicIpAddress": "98.89.36.6"
+                }
+            ]
+        }
+    ]
+}

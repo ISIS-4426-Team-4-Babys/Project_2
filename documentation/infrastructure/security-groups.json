@@ -1,0 +1,519 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-0e3992b3d42b01c42",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "deploy-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0e3992b3d42b01c42",
+            "OwnerId": "159478904064",
+            "GroupName": "deploy-sg",
+            "Description": "Permite el acceso a los agentes desplegados",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Permite el acceso al reverse proxy",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0258d7169e09f64ab"
+                        },
+                        {
+                            "Description": "Permite el acceso al reverse proxy",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-01b115782e9606e26"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 20000,
+                    "ToPort": 30000,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Permite el acceso a los agentes desplegados",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0258d7169e09f64ab"
+                        },
+                        {
+                            "Description": "Permite el acceso a los agentes desplegados",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-01b115782e9606e26"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0350570bdda157f6a",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0350570bdda157f6a",
+            "OwnerId": "159478904064",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0350570bdda157f6a"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0cd7cd9124a5f7dfe",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "nfs-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0cd7cd9124a5f7dfe",
+            "OwnerId": "159478904064",
+            "GroupName": "nfs-sg",
+            "Description": "Permite el acceso por el puerto del NFS",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 2049,
+                    "ToPort": 2049,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Permite el acceso de los workers al servidor NFS",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0fac6a7b139999ad9"
+                        },
+                        {
+                            "Description": "Permite el acceso del worker de despliege al NFS",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0e3992b3d42b01c42"
+                        },
+                        {
+                            "Description": "Permite el acceso del backend al servidor NFS",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-042caf03db2dbf722"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0fac6a7b139999ad9",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "workers-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0fac6a7b139999ad9",
+            "OwnerId": "159478904064",
+            "GroupName": "workers-sg",
+            "Description": "Permite identificar los workers",
+            "IpPermissions": []
+        },
+        {
+            "GroupId": "sg-0980f9106e7ecd988",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "bastion-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0980f9106e7ecd988",
+            "OwnerId": "159478904064",
+            "GroupName": "bastion-sg",
+            "Description": "Permite el acceso por SSH al Bastion",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Permite el acceso por SSH desde cualquier lado",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-042caf03db2dbf722",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "backend-db-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-042caf03db2dbf722",
+            "OwnerId": "159478904064",
+            "GroupName": "backend-db-sg",
+            "Description": "Permite el acceso del frontend al backend",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 8000,
+                    "ToPort": 8000,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Permite el acceso del frontend al backend",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0258d7169e09f64ab"
+                        },
+                        {
+                            "Description": "Permite el acceso de las pruebas de carga",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-01b115782e9606e26"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0ef5ce3b1c5727990",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "private-ssh-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0ef5ce3b1c5727990",
+            "OwnerId": "159478904064",
+            "GroupName": "private-ssh-sg",
+            "Description": "Permite el acceso por SSH desde el bastion a las maquinas privadas",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Permite el acceso por SSH desde el bastion a las maquinas privadas",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0980f9106e7ecd988"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-006eacc93da867087",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0d8b1a16a82bca4a6",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-006eacc93da867087",
+            "OwnerId": "159478904064",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "159478904064",
+                            "GroupId": "sg-006eacc93da867087"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0f4e493a65b115109",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "broker-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0f4e493a65b115109",
+            "OwnerId": "159478904064",
+            "GroupName": "broker-sg",
+            "Description": "Permite el acceso al broker",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 5672,
+                    "ToPort": 5672,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Permite el acceso del worker de despliegue al broker",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0e3992b3d42b01c42"
+                        },
+                        {
+                            "Description": "Permite el acceso del backend al broker",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-042caf03db2dbf722"
+                        },
+                        {
+                            "Description": "Permite el acceso de los workers al broker",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-0fac6a7b139999ad9"
+                        },
+                        {
+                            "Description": "Permite el acceso de las pruebas de carga",
+                            "UserId": "159478904064",
+                            "GroupId": "sg-01b115782e9606e26"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-01b115782e9606e26",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "load-sg"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-01b115782e9606e26",
+            "OwnerId": "159478904064",
+            "GroupName": "load-sg",
+            "Description": "Permite identificar las pruebas de carga",
+            "IpPermissions": []
+        },
+        {
+            "GroupId": "sg-0258d7169e09f64ab",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "frontend"
+                }
+            ],
+            "VpcId": "vpc-01b07d85528c04259",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:159478904064:security-group/sg-0258d7169e09f64ab",
+            "OwnerId": "159478904064",
+            "GroupName": "frontend-sg",
+            "Description": "Permite el acceso a la aplicacion web",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Permite el acceso al puerto 80",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 3000,
+                    "ToPort": 3000,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Permite el acceso al puerto 3000",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Permite el acceso al puerto 443",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "Addresses": [
+        {
+            "AllocationId": "eipalloc-06b1f6d5bf04ff65e",
+            "AssociationId": "eipassoc-05accfcbc64f5914a",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-024bc993a3db0c91e",
+            "NetworkInterfaceOwnerId": "159478904064",
+            "PrivateIpAddress": "10.0.0.145",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "deplo-vpc-eip-us-east-1a"
+                }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "us-east-1",
+            "PublicIp": "44.199.82.155"
+        },
+        {
+            "AllocationId": "eipalloc-0af75820db0f2ff69",
+            "Domain": "vpc",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "deplo-vpc-eip-us-east-1a"
+                }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "us-east-1",
+            "PublicIp": "54.237.110.47"
+        }
+    ]
+}

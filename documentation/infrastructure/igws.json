@@ -1,0 +1,31 @@
+{
+    "InternetGateways": [
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-01b07d85528c04259"
+                }
+            ],
+            "InternetGatewayId": "igw-03d1e5241bb2f6ff3",
+            "OwnerId": "159478904064",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "deplo-vpc-igw"
+                }
+            ]
+        },
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-0d8b1a16a82bca4a6"
+                }
+            ],
+            "InternetGatewayId": "igw-0a57e821204bb2173",
+            "OwnerId": "159478904064",
+            "Tags": []
+        }
+    ]
+}
