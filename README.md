@@ -173,6 +173,7 @@ Al incrementar la concurrencia, la latencia promedio se eleva considerablemente,
 
 **Análisis:**  
 Con carga máxima instantánea, la latencia promedio sube ligeramente respecto al escenario anterior, manteniendo estabilidad y sin fallos. De igual forma, se evidencia problemas en el procesamiento paralelo por parte de los modelos, lo que hace que los tiempos sean demasiado elevados. 
+
 ---
 
 #### Resumen de tiempos promedio
